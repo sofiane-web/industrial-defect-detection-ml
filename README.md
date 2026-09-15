@@ -1,36 +1,66 @@
-# Projet-de-Machine-Learning-# Détection de Défauts dans la Production Industrielle 🏭
+# 🏭 Détection de Défauts dans la Production Industrielle (Machine Learning)
 
-Ce projet utilise le **Machine Learning** pour identifier automatiquement les pièces défectueuses en fonction de divers paramètres de production (coût, temps de maintenance, score de qualité, etc.).
-
-## 📌 Objectif du projet
-L'objectif est de réduire les pertes industrielles en prédisant si une pièce est conforme ou défectueuse (`DefectStatus`) avant qu'elle ne quitte la chaîne de production.
-
-## 🛠️ Stack Technique
-- **Langage** : Python
-- **Bibliothèques** : 
-  - `Pandas` & `NumPy` : Manipulation des données.
-  - `Scikit-Learn` : Construction des modèles (**Random Forest**, **Decision Tree**).
-  - `Imbalanced-learn (SMOTE)` : Pour gérer le déséquilibre des classes (moins de défauts que de pièces saines).
-  - `Matplotlib` & `Seaborn` : Visualisation des données.
-
-## 📊 Méthodologie
-1. **Analyse exploratoire** : Étude des corrélations entre le taux de défauts et les variables comme le `QualityScore` ou les `MaintenanceHours`.
-2. **Pré-traitement** : Gestion des valeurs manquantes avec `SimpleImputer` et normalisation.
-3. **Gestion du déséquilibre** : Application de la technique **SMOTE** pour augmenter artificiellement le nombre d'exemples de pièces défectueuses et améliorer l'apprentissage.
-4. **Modélisation** : Entraînement et optimisation via `GridSearchCV`.
-
-## 📈 Résultats
-Le modèle final (Random Forest) a été évalué sur :
-- **Précision** : Capacité à ne pas déclarer une pièce saine comme défectueuse.
-- **Rappel (Recall)** : Capacité cruciale à détecter *tous* les défauts réels.
-
-## 🚀 Comment l'utiliser
-1. Cloner le dépôt : `git clone https://github.com/mouadafylal77/Projet-de-Machine-Learning-.git`
-2. Installer les dépendances : `pip install pandas scikit-learn imblearn matplotlib seaborn`
-3. Installer les dépendances : `pip install pandas scikit-learn imblearn matplotlib seaborn`
-4. Lancer le notebook `projet_detection_defauts_industriels`.
+Ce projet applique des techniques avancées d'apprentissage supervisé pour identifier et prédire automatiquement les pièces défectueuses sur une chaîne de fabrication en fonction de multiples paramètres de production (coût, temps de maintenance, score de qualité, etc.).
 
 ---
-Contributeurs : Moad Afylal & Sofyane Fritit.
 
-Projet académique de fin de module Machine Learning– Licence Analyse de Données, FSTT 2026.
+## 📌 Objectifs du Projet
+
+L'enjeu principal est de réduire les rebuts et les coûts liés aux arrêts de production en prédisant l'état de conformité (`DefectStatus`) avant la sortie d'usine.
+
+* **Identification précoce :** Détecter avec précision les anomalies de production.
+* **Traitement des données réelles :** Gérer le déséquilibre sévère des classes (les défauts étant rares par rapport aux pièces conformes).
+* **Aide à la décision :** Optimiser le compromis entre précision et rappel pour minimiser les faux négatifs.
+
+---
+
+## 🛠️ Stack Technique
+
+* **Langage :** Python
+* **Manipulation de Données :** Pandas, NumPy
+* **Machine Learning & Modélisation :** Scikit-Learn (Random Forest, Decision Tree, GridSearchCV)
+* **Traitement du Déséquilibre :** Imbalanced-learn (SMOTE)
+* **Visualisation Statistique :** Matplotlib, Seaborn
+
+---
+
+## 📊 Méthodologie & Pipeline ML
+
+1. **Analyse Exploratoire des Données (EDA) :**
+   * Étude des corrélations entre les variables clés (`QualityScore`, `MaintenanceHours`) et le taux de défaut.
+   * Détection des distributions asymétriques et des valeurs aberrantes.
+
+2. **Prétraitement des Données :**
+   * Imputation des valeurs manquantes via `SimpleImputer`.
+   * Encodage et normalisation des caractéristiques numériques.
+
+3. **Gestion du Déséquilibre de Classes :**
+   * Utilisation de l'algorithme **SMOTE** (*Synthetic Minority Over-sampling Technique*) pour synthétiser des exemples de la classe minoritaire et éviter le surapprentissage de la classe majoritaire.
+
+4. **Modélisation & Optimisation :**
+   * Entraînement de classifieurs d'arbres de décision et de forêts aléatoires (*Random Forest*).
+   * Réglage fin des hyperparamètres via validation croisée (`GridSearchCV`).
+
+---
+
+## 📈 Évaluation des Performances
+
+Les modèles ont été évalués principalement sur :
+* **Recall (Rappel) :** Métrique critique afin de minimiser le risque de laisser passer une pièce défectueuse.
+* **Precision :** Mesure de la fiabilité des alertes de défauts générées par le système.
+* **Matrice de Confusion & Courbe ROC-AUC.**
+
+---
+
+## 🚀 Installation et Utilisation
+
+1. **Cloner le dépôt :**
+   ```bash
+   git clone [https://github.com/sofiane-web/industrial-defect-detection-ml.git](https://github.com/sofiane-web/industrial-defect-detection-ml.git)
+   cd industrial-defect-detection-ml
+
+
+   👥 Auteurs & Contributeurs
+FRITIT Sofyane — Data Analytics / Machine Learning
+
+Moad Afylal — Binôme de projet
